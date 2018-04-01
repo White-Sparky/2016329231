@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>简易计算器</title>
+    <script>
+	     function compute(obj){
+            var num1,num2,result;
+            num1=parseFloat(document.myfrom.txtNum1.value);
+            num2=parseFloat(document.myfrom.txtNum2.value);
+                switch(obj){
+                    case " + ":result=num1+num2;
+                    break;
+                    case " - ":result=num1-num2;
+                    break;
+                    case " * ":result=num1*num2;
+                    break;
+                    case " / ":
+                    if(num2!=0)
+                    result=num1/num2;
+                    else
+                        result="除数不能为0，请重新输入！";
+                    break;
+                }
+                document.myfrom.txtResult.value=result;
+            }
+	  </script>
+    
+</head>
+
+<body>
+    <form name="myfrom"> 
+        <h1>购物简易计算器</h1>
+        <td>第一个数：</td>
+            <td>
+                <input type="text" id="txtNum1" name="txtNum1">
+            </td>
+        </tr>
+        <br>
+            <tr>
+            <td>第二个数：</td>
+            <td>
+                <input type="text" id="txtNum2" name="txtNum2">
+            </td>
+        </tr> 
+        <br>
+        <tr>
+            <td>
+                <input name="addButton2" type="button" id="addBtn" value=" + " onclick="compute(' + ')">
+            </td>
+            <td>
+                <input name="subButton2" type="button" id="subBtn" value=" - " onclick="compute(' - ')">
+            </td>
+            <td>
+                <input name="mulButton2" type="button" id="mulBtn" value=" × " onclick="compute(' * ')">
+            </td>
+            <td>
+                <input name="divButton2" type="button" id="divBtn" value=" ÷ " onclick="compute(' / ')">
+            </td>
+        </tr>
+        <tr>
+            <br>
+            <td>计算结果</td>
+            <td colspan="3">
+                <input name="txtReult" type="text" id="txtResult" size="25"/>
+            </td>
+        </tr>
+    </form>
+</body>
+</html>
